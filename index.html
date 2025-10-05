@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&_ij_reload=RELOAD_ON_SAVE#contact -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoroTrust - Le Label International de Cybersécurité</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./index_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./index_files/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0A0A0A;
+            --border-color-translucent: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(22, 27, 34, 0.6);
+            --text-primary: #f0f6fc;
+            --text-secondary: #a1aab8;
+
+            /* COULEURS DES BADGES RÉELS */
+            --badge-level1-color: #00FFFF; /* Turquoise pour Essentiel */
+            --badge-level2-color: #FF0054; /* Rouge pour Conforme */
+            --badge-level3-color: #FFD700; /* Or pour Renforcé */
+
+            --font-family: 'Inter', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* --- AURORA BACKGROUND --- */
+        .aurora-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .aurora-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+        }
+
+        .aurora-shape1 {
+            width: 500px;
+            height: 500px;
+            background: var(--badge-level1-color);
+            top: -150px;
+            left: -150px;
+            animation: moveAurora1 20s infinite alternate ease-in-out;
+        }
+
+        .aurora-shape2 {
+            width: 400px;
+            height: 400px;
+            background: var(--badge-level3-color);
+            bottom: -100px;
+            right: -100px;
+            animation: moveAurora2 25s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveAurora1 {
+            from { transform: translate(0, 0) rotate(0deg); }
+            to { transform: translate(200px, 100px) rotate(70deg); }
+        }
+
+        @keyframes moveAurora2 {
+            from { transform: translate(0, 0) rotate(0deg); }
+            to { transform: translate(-150px, -50px) rotate(90deg); }
+        }
+
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- Animations --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Header --- */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color-translucent);
+            position: sticky;
+            top: 0;
+            background-color: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo img {
+            max-height: 40px;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
+
+        .header-cta {
+            background: var(--badge-level1-color);
+            color: var(--bg-dark);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .header-cta:hover {
+            background: #66FFFF;
+            transform: scale(1.05);
+        }
+
+        /* --- Sections --- */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 70px auto;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #fff, #c9d1d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: var(--text-secondary);
+        }
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--badge-level1-color), #66FFFF);
+            color: var(--bg-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
+        .hero-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
+        }
+
+        /* --- Interactive Card Style --- */
+        .interactive-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-color-translucent);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            transition: border-color 0.3s, transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
+
+        .interactive-card:hover {
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* --- Why Section --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            padding: 32px;
+        }
+        .feature-card .icon {
+            color: var(--badge-level1-color);
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        /* --- Process Section --- */
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+        }
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: var(--border-color-translucent);
+        }
+        .process-step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 50px;
+        }
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        .process-step::before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--glass-bg);
+            border: 1px solid var(--badge-level1-color);
+            color: var(--badge-level1-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+        }
+        .process-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .process-step p {
+            color: var(--text-secondary);
+        }
+
+        /* --- Partners Section --- */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+        .partner-logo img {
+            max-height: 40px;
+            width: auto;
+            filter: grayscale(100%) brightness(0.8);
+            opacity: 0.8;
+            transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+        }
+        .partner-logo img:hover {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* --- Sale Banner --- */
+        .sale-banner {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--badge-level3-color);
+            margin-bottom: 40px;
+            padding: 15px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--badge-level3-color);
+            border-radius: 10px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        /* --- Pricing Section --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            align-items: stretch;
+            perspective: 1500px;
+        }
+        .pricing-card {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .pricing-badge-img {
+            display: block;
+            max-height: 150px;
+            width: auto;
+            margin: 0 auto 25px auto;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover .pricing-badge-img {
+            transform: scale(1.05);
+        }
+
+        .pricing-card-highlight {
+            border: 2px solid var(--badge-level1-color);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+        }
+        .badge-level {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            justify-content: center;
+        }
+
+        .badge-essentiel { color: var(--badge-level1-color); }
+        .badge-conforme { color: var(--badge-level2-color); }
+        .badge-renforce { color: var(--badge-level3-color); }
+
+        .pricing-card .description {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            min-height: 4em;
+        }
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .price-original {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin-right: 10px;
+            font-weight: 400;
+        }
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 5px;
+        }
+        .features-list {
+            list-style: none;
+            margin: 32px 0;
+            text-align: left;
+            flex-grow: 1;
+        }
+        .features-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .features-list i {
+            color: var(--badge-level1-color);
+            margin-top: 4px;
+        }
+        .pricing-cta {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid var(--badge-level1-color);
+            color: var(--badge-level1-color);
+        }
+        .pricing-cta-primary {
+            background-color: var(--badge-level1-color);
+            color: var(--bg-dark);
+        }
+        .pricing-cta:hover {
+            background-color: var(--badge-level1-color);
+            color: var(--bg-dark);
+        }
+        .pricing-cta-primary:hover {
+            background-color: #66FFFF;
+            border-color: #66FFFF;
+        }
+
+        /* --- CTA Section --- */
+        .cta-section {
+            padding: 80px 40px;
+            text-align: center;
+        }
+        .cta-section .section-title { margin-bottom: 24px; }
+        .cta-section .section-subtitle { margin-bottom: 40px; }
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            transform: scale(1.05);
+        }
+        .contact-button i {
+            font-size: 1.2rem;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: #fff;
+        }
+        .email-button {
+            background-color: var(--badge-level1-color);
+            color: var(--bg-dark);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            margin-top: 100px;
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color-translucent);
+            color: var(--text-secondary);
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .demo-notice {
+            font-style: italic;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .demo-notice i {
+            margin-right: 5px;
+        }
+        .powered-by a {
+            color: var(--badge-level1-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .powered-by a:hover {
+            color: #fff;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card {
+                margin-bottom: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .process-timeline::before { left: 20px; }
+            .process-step { padding-left: 70px; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="aurora-background">
+        <div class="aurora-shape aurora-shape1"></div>
+        <div class="aurora-shape aurora-shape2"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a href="http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&amp;_ij_reload=RELOAD_ON_SAVE#" class="header-logo">
+                <img src="./index_files/logo.png" alt="MoroTrust Logo">
+            </a>
+            <a href="http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&amp;_ij_reload=RELOAD_ON_SAVE#contact" class="header-cta">Demander un Badge</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title fade-in visible">Transformez la Confiance en Avantage Concurrentiel.</h1>
+                <p class="hero-subtitle fade-in visible" style="transition-delay: 0.2s;">MoroTrust est le premier label international de cybersécurité qui prouve votre engagement, rassure vos partenaires et valorise votre entreprise sur le marché mondial.</p>
+                <a href="http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&amp;_ij_reload=RELOAD_ON_SAVE#pricing" class="hero-cta fade-in visible" style="transition-delay: 0.4s;">Découvrir les Badges</a>
+            </div>
+        </section>
+
+        <section id="why" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in visible">Un Label pour l'Ère de la Confiance Numérique</h2>
+                <p class="section-subtitle fade-in visible">Aujourd'hui, un certificat SSL ne suffit plus. Vos clients et partenaires exigent des preuves tangibles de votre robustesse. Le badge MoroTrust est votre réponse.</p>
+                <div class="features-grid">
+                    <div class="feature-card interactive-card fade-in visible" style="transition-delay: 0.1s;">
+                        <div class="icon"><i class="fas fa-shield-halved"></i></div>
+                        <h3>Preuve de Confiance</h3>
+                        <p>Démontrez de manière vérifiable que vous protégez activement les données et respectez les normes internationales.</p>
+                    </div>
+                    <div class="feature-card interactive-card fade-in visible" style="transition-delay: 0.2s;">
+                        <div class="icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Avantage Commercial</h3>
+                        <p>Différenciez-vous de la concurrence et gagnez des appels d'offres en affichant un engagement de sécurité supérieur.</p>
+                    </div>
+                    <div class="feature-card interactive-card fade-in visible" style="transition-delay: 0.3s; transform: perspective(1000px) rotateX(0deg) rotateY(0deg);">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Argument Marketing</h3>
+                        <p>Utilisez votre badge sur tous vos supports pour renforcer votre image de marque et rassurer vos prospects instantanément.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in visible">Notre Processus de Validation</h2>
+                <p class="section-subtitle fade-in visible">Un diagnostic simple et rigoureux en 5 axes clés pour évaluer votre posture de cybersécurité et vous guider vers l'excellence.</p>
+                <ol class="process-timeline">
+                    <li class="process-step fade-in visible" data-step="1">
+                        <h3>Gestion des Accès</h3>
+                        <p>Évaluation de vos politiques de mots de passe et de la sécurisation des comptes utilisateurs.</p>
+                    </li>
+                    <li class="process-step fade-in visible" data-step="2">
+                        <h3>Infrastructure &amp; Sauvegarde</h3>
+                        <p>Analyse de la robustesse de vos systèmes, de vos serveurs et de vos plans de reprise d'activité.</p>
+                    </li>
+                    <li class="process-step fade-in visible" data-step="3">
+                        <h3>Sensibilisation des Équipes</h3>
+                        <p>Mesure de la culture de sécurité interne et de la formation des collaborateurs face au phishing.</p>
+                    </li>
+                    <li class="process-step fade-in visible" data-step="4">
+                        <h3>Conformité Réglementaire</h3>
+                        <p>Vérification de votre alignement avec les normes mondiales comme le GDPR et les standards ISO/NIST.</p>
+                    </li>
+                     <li class="process-step fade-in visible" data-step="5">
+                        <h3>Sécurité Web &amp; Externe</h3>
+                        <p>Examen des mesures de protection de votre site web et de vos points d'accès externes.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="partners" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in visible">Ils Nous Font Confiance</h2>
+                <p class="section-subtitle fade-in visible">Notre méthodologie est alignée sur les standards des leaders de l'industrie, garantissant une crédibilité et une confiance maximales.</p>
+                <div class="partners-grid">
+                    <div class="partner-logo fade-in visible" style="transition-delay: 0.1s;">
+                        <img src="./index_files/Microsoft_logo.svg" alt="Microsoft Logo">
+                    </div>
+                    <div class="partner-logo fade-in visible" style="transition-delay: 0.2s;">
+                        <img src="./index_files/Google_2015_logo.svg" alt="Google Logo">
+                    </div>
+                    <div class="partner-logo fade-in visible" style="transition-delay: 0.3s;">
+                        <img src="./index_files/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services Logo">
+                    </div>
+                    <div class="partner-logo fade-in visible" style="transition-delay: 0.4s;">
+                        <img src="./index_files/IBM_logo.svg" alt="IBM Logo">
+                    </div>
+                    <div class="partner-logo fade-in visible" style="transition-delay: 0.5s;">
+                        <img src="./index_files/Cisco_logo_blue_2016.svg" alt="Cisco Logo">
+                    </div>
+                    <div class="partner-logo fade-in visible" style="transition-delay: 0.6s;">
+                        <img src="./index_files/Oracle_logo.svg" alt="Oracle Logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section">
+            <div class="container">
+                <h2 class="section-title fade-in visible">Détail des Niveaux de Confiance</h2>
+                <p class="section-subtitle fade-in visible">Choisissez le badge qui correspond le mieux à la maturité et aux ambitions de votre entreprise en matière de cybersécurité.</p>
+
+                <div class="sale-banner fade-in visible">🔥 Offre Spéciale : -50% sur tous les badges ! 🔥</div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card interactive-card fade-in visible" style="transition-delay: 0.1s;">
+                        <img src="./index_files/badge1.png" alt="Badge Essentiel" class="pricing-badge-img">
+                        <h3 class="badge-level badge-essentiel">ESSENTIEL</h3>
+                        <p class="description">Le niveau fondamental pour prouver votre respect des bases essentielles de la cybersécurité.</p>
+                        <div class="price">
+                            <span class="price-original">90 $</span> 45 $<span> / an</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i>Accès au questionnaire d'auto-diagnostic</li>
+                            <li><i class="fas fa-check-circle"></i>Scoring et rapport de conformité</li>
+                            <li><i class="fas fa-check-circle"></i>Badge numérique vérifiable</li>
+                            <li><i class="fas fa-check-circle"></i>Idéal pour PME, startups, freelances</li>
+                        </ul>
+                        <a href="http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&amp;_ij_reload=RELOAD_ON_SAVE#contact" class="pricing-cta">Choisir Essentiel</a>
+                    </div>
+                    <div class="pricing-card interactive-card pricing-card-highlight fade-in visible" style="transition-delay: 0.2s;">
+                        <img src="./index_files/badge2.png" alt="Badge Conforme" class="pricing-badge-img">
+                        <h3 class="badge-level badge-conforme">CONFORME</h3>
+                        <p class="description">Le niveau supérieur qui atteste de la sensibilisation et de la formation de vos équipes.</p>
+                        <div class="price">
+                            <span class="price-original">290 $</span> 145 $<span> / an</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i><strong>Tout de Essentiel, plus :</strong></li>
+                            <li><i class="fas fa-check-circle"></i>Formation cybersécurité à distance</li>
+                            <li><i class="fas fa-check-circle"></i>Quiz de validation pour collaborateurs</li>
+                            <li><i class="fas fa-check-circle"></i>Attestation de sensibilisation collective</li>
+                            <li><i class="fas fa-check-circle"></i>Renforce conformités ISO/GDPR</li>
+                        </ul>
+                        <a href="http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&amp;_ij_reload=RELOAD_ON_SAVE#contact" class="pricing-cta pricing-cta-primary">Choisir Conforme</a>
+                    </div>
+                    <div class="pricing-card interactive-card fade-in visible" style="transition-delay: 0.3s; transform: perspective(1000px) rotateX(0deg) rotateY(0deg);">
+                        <img src="./index_files/badge3.png" alt="Badge Renforcé" class="pricing-badge-img">
+                        <h3 class="badge-level badge-renforce">RENFORCÉ</h3>
+                        <p class="description">La plus haute reconnaissance, pour les organisations visant l'excellence en cybersécurité.</p>
+                        <div class="price">
+                            <span class="price-original">790 $</span> 395 $<span> / an</span>
+                        </div>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i><strong>Tout de Conforme, plus :</strong></li>
+                            <li><i class="fas fa-check-circle"></i>Audit organisationnel avancé</li>
+                            <li><i class="fas fa-check-circle"></i>Accompagnement personnalisé 1 mois</li>
+                            <li><i class="fas fa-check-circle"></i>Mise à jour des politiques cyber internes</li>
+                            <li><i class="fas fa-check-circle"></i>Support annuel stratégique</li>
+                        </ul>
+                        <a href="http://localhost:63342/PythonProject/HOME.html?_ijt=uf5tsttnpoepupptt477hafg6g&amp;_ij_reload=RELOAD_ON_SAVE#contact" class="pricing-cta">Choisir Renforcé</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="cta-section interactive-card fade-in visible" style="transform: perspective(1000px) rotateX(0deg) rotateY(0deg);">
+                    <h2 class="section-title">Prêt à Devenir une Référence de Confiance ?</h2>
+                    <p class="section-subtitle">Contactez-nous directement pour démarrer votre processus de certification. Notre équipe est prête à vous guider.</p>
+
+                    <div class="contact-methods">
+                        <a href="https://wa.me/212708908907" target="_blank" class="contact-button whatsapp-button">
+                            <i class="fab fa-whatsapp"></i> Contacter par WhatsApp
+                        </a>
+                        <a href="mailto:HOUSSAMEELBOUCHIKHI@GMAIL.COM" class="contact-button email-button">
+                            <i class="fas fa-envelope"></i> Contacter par Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="powered-by">
+                MoroTrust powered by <a href="https://ebh.ma/" target="_blank">EBH Technologies</a>
+            </p>
+            <p class="copyright">
+                © 2025 MoroTrust. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Animation on Scroll ---
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => observer.observe(el));
+        });
+
+        // --- 3D Card Tilt Effect ---
+        const cards = document.querySelectorAll('.interactive-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const rotateX = ((y - centerY) / centerY) * -7; // Invert for natural feel
+                const rotateY = ((x - centerX) / centerX) * 7;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    </script>
+
+<script>
+(function() {
+  var ws = new WebSocket('ws://' + window.location.host + 
+             '/jb-server-page?reloadMode=RELOAD_ON_SAVE&'+
+             'referrer=' + encodeURIComponent(window.location.pathname));
+  ws.onmessage = function (msg) {
+      if (msg.data === 'reload') {
+          window.location.reload();
+      }
+      if (msg.data.startsWith('update-css ')) {
+          var messageId = msg.data.substring(11);
+          var links = document.getElementsByTagName('link');
+          for (var i = 0; i < links.length; i++) {
+              var link = links[i];
+              if (link.rel !== 'stylesheet') continue;
+              var clonedLink = link.cloneNode(true);
+              var newHref = link.href.replace(/(&|\?)jbUpdateLinksId=\d+/, "$1jbUpdateLinksId=" + messageId);
+              if (newHref !== link.href) {
+                clonedLink.href = newHref;
+              }
+              else {
+                var indexOfQuest = newHref.indexOf('?');
+                if (indexOfQuest >= 0) {
+                  // to support ?foo#hash 
+                  clonedLink.href = newHref.substring(0, indexOfQuest + 1) + 'jbUpdateLinksId=' + messageId + '&' + 
+                                    newHref.substring(indexOfQuest + 1);
+                }
+                else {
+                  clonedLink.href += '?' + 'jbUpdateLinksId=' + messageId;
+                }
+              }
+              link.replaceWith(clonedLink);
+          }
+      }
+  };
+})();
+</script></body></html>
